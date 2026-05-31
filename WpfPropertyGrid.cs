@@ -218,9 +218,9 @@ namespace PROPGRID
         {
             WpfPropertyGrid pg = d as WpfPropertyGrid;
 
-            object single = pg.GetValue(SelectedObjectsProperty);
+            object single = pg.GetValue(SelectedObjectProperty);
 
-            return single == null ? new object[0] : value;
+            return single == null ? new object[0] : new object[] { single };
         }
 
         private static void SelectedObjectPropertyChanged(DependencyObject source, DependencyPropertyChangedEventArgs e)
@@ -228,22 +228,7 @@ namespace PROPGRID
             WpfPropertyGrid pg = source as WpfPropertyGrid;
             pg.CoerceValue(SelectedObjectsProperty);
 
-            if (e.NewValue == null)
-            {
-                pg.OnSelectionChangedMethod.Invoke(pg.Designer.PropertyInspectorView, new object[] { null });
-                pg.SelectionTypeLabel.Text = string.Empty;
-            }
-            else
-            {
-                var context = new EditingContext();
-                var mtm = new ModelTreeManager(context);
-                mtm.Load(e.NewValue);
-                Selection selection = Selection.Select(context, mtm.Root);
-
-                pg.OnSelectionChangedMethod.Invoke(pg.Designer.PropertyInspectorView, new object[] { selection });
-                pg.SelectionTypeLabel.Text = e.NewValue.GetType().Name;
-            }
-
+            pg.SelectionTypeLabel.Text = e.NewValue == null ? string.Empty : e.NewValue.GetType().Name;
             pg.ChangeHelpText(string.Empty, string.Empty);
             pg._lastSelectedPropertyName = null;
             pg.RaiseEvent(new PropertySelectedEventArgs(SelectedPropertyChangedEvent, null, null, null));
@@ -251,7 +236,6 @@ namespace PROPGRID
         private static void SelectedObjectsPropertyChanged(DependencyObject source, DependencyPropertyChangedEventArgs e)
         {
             WpfPropertyGrid pg = source as WpfPropertyGrid;
-            pg.CoerceValue(SelectedObjectsProperty);
 
             object[] collection = e.NewValue as object[];
 
@@ -287,7 +271,7 @@ namespace PROPGRID
                 }
 
                 pg.OnSelectionChangedMethod.Invoke(pg.Designer.PropertyInspectorView, new object[] { selection });
-                pg.SelectionTypeLabel.Text = same ? first.Name + " <multiple>" : "Object <multiple>";
+                pg.SelectionTypeLabel.Text = collection.Length == 1 ? first.Name : (same ? first.Name + " <multiple>" : "Object <multiple>");
             }
 
             pg.ChangeHelpText(string.Empty, string.Empty);

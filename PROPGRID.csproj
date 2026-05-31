@@ -10,13 +10,13 @@
     <Description>WPF wrapper library providing a Visual Studio-style property grid, wrapping .NET Framework Workflow Foundation PropertyInspector.</Description>
     <Company>Dmitriy Novikov, Jaime Olivares and contributors</Company>
     <Copyright>Copyright © 2026 Dmitriy Novikov, RD, LD/N and contributors</Copyright>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-    <FileVersion>1.0.0</FileVersion>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <FileVersion>1.0.1</FileVersion>
     <DefaultItemExcludes>$(DefaultItemExcludes);demo\**;tests\**</DefaultItemExcludes>
 
     <!-- NuGet package metadata -->
     <PackageId>PROPGRID</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Dmitriy Novikov, RD, LD/N and contributors</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
