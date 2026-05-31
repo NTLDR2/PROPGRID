@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>PROPGRID-DEMO</AssemblyName>
+    <RootNamespace>PROPGRID_DEMO</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Activities.Core.Presentation" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PROPGRID.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,27 @@
+# Build outputs
+bin/
+obj/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# VS Code
+*.code-workspace
+.vscode/
+
+# Antigravity / Gemini
+.gemini/
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store

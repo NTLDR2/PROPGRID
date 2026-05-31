@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>PROPGRID</AssemblyName>
+    <RootNamespace>PROPGRID</RootNamespace>
+    <Title>PROPGRID — WPF wrapper for Workflow Foundation PropertyGrid</Title>
+    <Description>WPF wrapper library providing a Visual Studio-style property grid, wrapping .NET Framework Workflow Foundation PropertyInspector.</Description>
+    <Company>Dmitriy Novikov, Jaime Olivares and contributors</Company>
+    <Copyright>Copyright © 2026 Dmitriy Novikov, RD, LD/N and contributors</Copyright>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+    <DefaultItemExcludes>$(DefaultItemExcludes);demo\**;tests\**</DefaultItemExcludes>
+
+    <!-- NuGet package metadata -->
+    <PackageId>PROPGRID</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Dmitriy Novikov, RD, LD/N and contributors</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/NTLDR2/PROPGRID</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/NTLDR2/PROPGRID.git</RepositoryUrl>
+    <PackageTags>wpf;propertygrid;property-grid;workflow-foundation</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Activities.Core.Presentation" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="" />
+    <None Include="LICENSE" Pack="true" PackagePath="" />
+  </ItemGroup>
+</Project>
